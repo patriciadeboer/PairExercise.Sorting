@@ -14,6 +14,6 @@ describe('Bubble Sort', function() {
   it('swaps the expected number of times', function() {
     spyOn(window, 'swap').and.callThrough();
     bubbleSort([7, 4, 9, 2]);
-    expect(swap.calls.count()).toEqual(5);
+    expect(swap.calls.count()).toEqual(12);
   });
 });
