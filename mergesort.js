@@ -7,34 +7,63 @@ function split(wholeArray) {
   return [firstHalf, secondHalf];
 }
 
+// function merge(arr1, arr2) {
+//   let longerArr = arr1;
+//   let shorterArr = arr2;
+//   console.log('merge arr1:', arr1);
+//   console.log('merge arr2:', arr2);
+//   if (arr1.length < arr2.length) {
+//     longerArr = arr2;
+//     shorterArr = arr1;
+//   }
+
+//   const returnMerge = longerArr.reduce((accum, currVal) => {
+//     while (currVal > shorterArr[0]) {
+//       accum.push(shorterArr.shift());
+//     }
+//     accum.push(currVal);
+//     return accum;
+//   }, []);
+//   console.log('return in Merge value:', returnMerge);
+//   return returnMerge;
+// }
+
 function merge(arr1, arr2) {
   let longerArr = arr1;
   let shorterArr = arr2;
+  console.log('merge arr1:', arr1);
+  console.log('merge arr2:', arr2);
   if (arr1.length < arr2.length) {
     longerArr = arr2;
     shorterArr = arr1;
   }
 
-  return longerArr.reduce((accum, currVal) => {
+  const returnMerge = longerArr.reduce((accum, currVal) => {
     while (currVal > shorterArr[0]) {
       accum.push(shorterArr.shift());
     }
+    //if(shorterArr[0])
     accum.push(currVal);
     return accum;
   }, []);
+  console.log('return in Merge value:', returnMerge);
+  return returnMerge;
 }
 
-// function merge(arr1, arr2) {
-//   // if (arr1.length > arr2.length) {
-//   return arr1.reduce((accum, currVal) => {
-//     let counter = 0;
-//     while (currVal > arr2[counter]) {
-//       accum.push(arr2[counter]);
-//       arr2.shift();
-//       counter++;
-//     }
-//     accum.push(currVal);
-//     return accum;
-//   }, []);
-// }
-// }
+function mergeSort(array) {
+  //debugger
+  if (array.length < 2) {
+    console.log(array);
+    return array;
+  } else if (array.length >= 2) {
+    console.log('array before split', array);
+    let arrSplit = split(array);
+    console.log('arrSplit result:', arrSplit);
+    let arr1 = arrSplit[0];
+    let arr2 = arrSplit[1];
+    return merge(mergeSort(arr1), mergeSort(arr2));
+  }
+  //return array
+  //keep splitting until we are at array's of 1
+  // split(array);
+}

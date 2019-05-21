@@ -19,8 +19,19 @@ describe('Split Array function', function() {
 });
 
 describe('Split Array function', function() {
+  fit('is able to merge two sorted arrays into one sorted array', function() {
+    // your code here
+    expect(merge([2, 6, 7, 9], [1, 3, 4 ,10])).toEqual([1, 2, 3, 4, 6, 7, 9, 10]);
+  });
   it('is able to merge two sorted arrays into one sorted array', function() {
     // your code here
-    expect(merge([2, 6, 7, 9], [1, 3, 4])).toEqual([1, 2, 3, 4, 6, 7, 9]);
+    expect(merge([6], [7])).toEqual([6, 7]);
+  });
+});
+
+describe('MergeSort function', function() {
+  it('is able to merge sort an array', function() {
+    // your code here
+    expect(mergeSort([1, 6, 7, 8, 3, 4, 9])).toEqual([1, 3, 4, 6, 7, 8, 9]);
   });
 });
