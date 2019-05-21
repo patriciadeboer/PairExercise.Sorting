@@ -39,12 +39,18 @@ function merge(arr1, arr2) {
   }
 
   const returnMerge = longerArr.reduce((accum, currVal) => {
-    while (currVal > shorterArr[0]) {
-      accum.push(shorterArr.shift());
+    for(let i =0 ; i< shorterArr.length; i++){
+      if(currVal > shorterArr[i]){
+        accum.push(shorterArr.shift())
+      }else{
+        accum.push(currVal)
+        accum.push(shorterArr.shift())
+      }
     }
-    //if(shorterArr[0])
-    accum.push(currVal);
+
+    console.log('accum in returnMerge:', accum)
     return accum;
+
   }, []);
   console.log('return in Merge value:', returnMerge);
   return returnMerge;

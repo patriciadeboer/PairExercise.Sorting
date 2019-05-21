@@ -19,7 +19,7 @@ describe('Split Array function', function() {
 });
 
 describe('Split Array function', function() {
-  fit('is able to merge two sorted arrays into one sorted array', function() {
+  it('is able to merge two sorted arrays into one sorted array', function() {
     // your code here
     expect(merge([2, 6, 7, 9], [1, 3, 4 ,10])).toEqual([1, 2, 3, 4, 6, 7, 9, 10]);
   });
