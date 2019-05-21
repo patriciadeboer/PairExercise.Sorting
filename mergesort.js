@@ -31,15 +31,17 @@ function split(wholeArray) {
 function merge(arr1, arr2) {
   let longerArr = arr1;
   let shorterArr = arr2;
-  console.log('merge arr1:', arr1);
-  console.log('merge arr2:', arr2);
+  console.log('merge arr1:', longerArr);
+  console.log('merge arr2:', shorterArr);
   if (arr1.length < arr2.length) {
     longerArr = arr2;
     shorterArr = arr1;
   }
 
   const returnMerge = longerArr.reduce((accum, currVal) => {
+    console.log('currValue: ', currVal)
     for(let i =0 ; i< shorterArr.length; i++){
+
       if(currVal > shorterArr[i]){
         accum.push(shorterArr.shift())
       }else{
